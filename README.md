@@ -1,6 +1,6 @@
 # Build a Node.js, Express, & PostgreSQL REST API
 
-A REST API from scracth in Node.js using the Express framework and Postgres database.
+A REST API from scratch in Node.js using the Express framework and Postgres database.
 
 ## GOALS
 
