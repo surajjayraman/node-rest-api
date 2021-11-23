@@ -1,9 +1,15 @@
 const express = require('express');
+const exphbs = require('express-handlebars').create({ defaultLayout: 'main', extname: '.hbs'});
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const { pool } = require('./config');
 
 const app = express();
+
+// configure express-handlebars as our view engine
+app.engine('hbs', exphbs.engine);
+
+app.set('view engine', 'hbs');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -45,6 +51,10 @@ const deleteBook = (request, response) => {
   // ...
   return response.status(200).json({ status: 'success', message: 'Book Deleted' });
 };
+
+app.get('/', (req, res) => {
+  res.render('home');
+});
 
 app
   .route('/books')
