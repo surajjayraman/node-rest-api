@@ -53,7 +53,23 @@ const deleteBook = (request, response) => {
 };
 
 app.get('/', (req, res) => {
-  res.render('home');
+  res.render('home', {
+    post: [{
+      author: 'Suraj Nair',
+      image: 'https://picsum.photos/500/500',
+      comments: ['This is the first comment',
+      'This is the second comment',
+      'Lorem ipsum dolor sit amet', 
+      'consectetur adipiscing elit. Vestibulum nec fermentum ligula. Sed vitae erat lectus.',
+      'Hello! This is cool!']
+    },
+    {
+        author: 'John Doe',
+        image: 'https://picsum.photos/500/500?2',
+        comments: [
+        ]
+    }]
+  });
 });
 
 app
@@ -63,7 +79,7 @@ app
   // POST endpoint
   .post(addBook);
 
-  app.route('/books/:id')
+app.route('/books/:id')
   // DELETE endpoint
   .delete(deleteBook);
 
