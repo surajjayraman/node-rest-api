@@ -1,5 +1,18 @@
 const express = require('express');
-const exphbs = require('express-handlebars').create({ defaultLayout: 'main', extname: '.hbs'});
+const exphbs = require('express-handlebars').create(
+  { defaultLayout: 'main',
+    extname: '.hbs',
+    helpers: {
+      getShortComment(comment) {
+        if (comment.length < 64) {
+          return comment;
+        }
+
+        return comment.substring(0, 61) + '...';
+      }
+    }
+
+  });
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const { pool } = require('./config');
@@ -58,16 +71,16 @@ app.get('/', (req, res) => {
       author: 'Suraj Nair',
       image: 'https://picsum.photos/500/500',
       comments: ['This is the first comment',
-      'This is the second comment',
-      'Lorem ipsum dolor sit amet', 
-      'consectetur adipiscing elit. Vestibulum nec fermentum ligula. Sed vitae erat lectus.',
-      'Hello! This is cool!']
+        'This is the second comment',
+        'Lorem ipsum dolor sit amet',
+        'consectetur adipiscing elit. Vestibulum nec fermentum ligula. Sed vitae erat lectus.',
+        'Hello! This is cool!']
     },
     {
-        author: 'John Doe',
-        image: 'https://picsum.photos/500/500?2',
-        comments: [
-        ]
+      author: 'John Doe',
+      image: 'https://picsum.photos/500/500?2',
+      comments: [
+      ]
     }]
   });
 });

@@ -12,7 +12,7 @@
                     <ul class="list-group">
                         <!-- Display comment logic -->
                         {{#each this.comments}}
-                        <li class="list-group-item">{{this}}</li>
+                        <li class="list-group-item">{{getShortComment this}}</li>
                         {{/each}}
                     </ul>
                     {{else}}
