@@ -1,18 +1,18 @@
 import fetch from 'node-fetch';
 
   const newBook = {
-    title: 'Game of Thrones',
-    author: 'George R. R. Martin',
+    title: 'Elon Musk',
+    author: 'Elon Musk',
   }
   
   try {
-    let response = await fetch('http://localhost:5000/books')
+    let response = await fetch('http://localhost:3002/books')
     const books = await response.json()
   
     console.log(books)
 
     response = await fetch(
-      'http://localhost:5000/books',
+      'http://localhost:3002/books',
       {
         headers: {
           Accept: 'application/json',

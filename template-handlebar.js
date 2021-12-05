@@ -39,3 +39,13 @@ const debitRewardsHtml = document.getElementById('points').innerHTML;
 const rewardsTemplate = Handlebars.compile(debitRewardsHtml);
 const rewardsHtml = rewardsTemplate(data);
 document.getElementById('points').innerHTML = rewardsHtml;
+
+// example of handlebar expression
+const expressionHtml = document.getElementById('entry').innerHTML;
+const expressionTemplate = Handlebars.compile(expressionHtml);
+const handlebar_expression = expressionTemplate({
+  title: "My New Post",
+  body: "This is my first post!"
+});
+
+document.getElementById('entry').innerHTML = handlebar_expression;
