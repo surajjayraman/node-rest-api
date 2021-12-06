@@ -41,11 +41,23 @@ const rewardsHtml = rewardsTemplate(data);
 document.getElementById('points').innerHTML = rewardsHtml;
 
 // example of handlebar expression
-const expressionHtml = document.getElementById('entry').innerHTML;
-const expressionTemplate = Handlebars.compile(expressionHtml);
-const handlebar_expression = expressionTemplate({
+let expressionHtml = document.getElementById('entry').innerHTML;
+let expressionTemplate = Handlebars.compile(expressionHtml);
+let handlebar_expression = expressionTemplate({
   title: "My New Post",
   body: "This is my first post!"
 });
 
 document.getElementById('entry').innerHTML = handlebar_expression;
+
+// example of expression with raw html
+expressionHtml = document.getElementById('entry-raw').innerHTML;
+expressionTemplate = Handlebars.compile(expressionHtml);
+handlebar_expression = expressionTemplate({
+    title: "All about <p> Tags",
+    body: "<p>This is a post about &lt;p&gt; tags</p>"
+  });
+
+document.getElementById('entry-raw').innerHTML = handlebar_expression;
+
+  
