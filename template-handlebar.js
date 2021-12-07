@@ -70,8 +70,8 @@ const names = {
 }
 
 Handlebars.registerHelper('list', function(data) {
-  let fullNames = [];
-  
+  const fullNames = [];
+    
   for (const name of data) {
     const fullName = `${name['firstName']} ${name['lastName']}`;
     fullNames.push(fullName); 
