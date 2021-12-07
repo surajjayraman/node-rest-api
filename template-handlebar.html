@@ -45,13 +45,12 @@
           </div>
         </div>
         <div id="block">
-          {{list this}}
           <ul>
-            <li>Yehuda Katz</li>
-            <li>Carl Lerche</li>
-            <li>Alan Johnson</li>
-          </ul>
-          
+          {{#each this}}          
+            <li class="list-group-item">{{firstName}} {{lastName}}</li>
+          {{/each}}
+          </ul> 
+          {{list this}}            
         </div>
       </div>
     </div>

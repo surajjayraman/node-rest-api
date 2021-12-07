@@ -71,18 +71,18 @@ const names = {
 
 Handlebars.registerHelper('list', function(data) {
   let fullNames = [];
-  console.log(data);
+  
   for (const name of data) {
     const fullName = `${name['firstName']} ${name['lastName']}`;
     fullNames.push(fullName); 
   }
   console.log(fullNames);
-  return fullNames;
+  return JSON.stringify(fullNames);
 });
 
 expressionHtml = document.getElementById('block').innerHTML;
 expressionTemplate = Handlebars.compile(expressionHtml);
-console.log(names.people);
+
 handlebar_expression = expressionTemplate(names.people);
 document.getElementById('block').innerHTML = handlebar_expression;
   
