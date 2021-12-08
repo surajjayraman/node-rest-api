@@ -71,18 +71,30 @@ const names = {
 
 Handlebars.registerHelper('list', function(data) {
   const fullNames = [];
-    
+
   for (const name of data) {
     const fullName = `${name['firstName']} ${name['lastName']}`;
     fullNames.push(fullName); 
   }
   console.log(fullNames);
-  return JSON.stringify(fullNames);
+  return fullNames;
 });
 
 expressionHtml = document.getElementById('block').innerHTML;
 expressionTemplate = Handlebars.compile(expressionHtml);
 
-handlebar_expression = expressionTemplate(names.people);
+handlebar_expression = expressionTemplate(names);
 document.getElementById('block').innerHTML = handlebar_expression;
   
+// example of each block helper
+expressionHtml = document.getElementById('people_list').innerHTML;
+expressionTemplate = Handlebars.compile(expressionHtml);
+
+handlebar_expression = expressionTemplate({
+  people: [
+    "Yehuda Katz",
+    "Alan Johnson",
+    "Charles Jolley"
+  ]
+});
+document.getElementById('people_list').innerHTML = handlebar_expression;

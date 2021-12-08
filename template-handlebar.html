@@ -46,11 +46,23 @@
         </div>
         <div id="block">
           <ul>
-          {{#each this}}          
+          {{#each people}}          
             <li class="list-group-item">{{firstName}} {{lastName}}</li>
           {{/each}}
           </ul> 
-          {{list this}}            
+          <ul>
+           <h4> Using subexpressions </h4> 
+          {{#each (list people)}}            
+            <li>{{this}}</li>                                    
+          {{/each}}
+          </ul>                                         
+        </div>
+        <div>
+          <ul id="people_list">
+            {{#each people}}
+              <li>{{this}}</li>
+            {{/each}}
+          </ul
         </div>
       </div>
     </div>
