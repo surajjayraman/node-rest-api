@@ -57,13 +57,24 @@
           {{/each}}
           </ul>                                         
         </div>
-        <div>
-          <ul id="people_list">
+        <div id="empty-context">
+          <ul>
+          <h4> Truthy context example </h4>
+          {{author}}
+          {{#if author}}
+            <h4>{{firstName}} {{lastName}}</h4>
+          {{/if}}
+          </ul>
+        </div>
+
+        <div id="people_list">
+          <ul>
             {{#each people}}
               <li>{{this}}</li>
             {{/each}}
-          </ul
+          </ul           
         </div>
+        
       </div>
     </div>
     <script>

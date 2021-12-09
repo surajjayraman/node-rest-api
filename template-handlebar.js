@@ -54,9 +54,9 @@ document.getElementById('entry').innerHTML = handlebar_expression;
 expressionHtml = document.getElementById('entry-raw').innerHTML;
 expressionTemplate = Handlebars.compile(expressionHtml);
 handlebar_expression = expressionTemplate({
-    title: "All about <p> Tags",
-    body: "<p>This is a post about &lt;p&gt; tags</p>"
-  });
+  title: "All about <p> Tags",
+  body: "<p>This is a post about &lt;p&gt; tags</p>"
+});
 
 document.getElementById('entry-raw').innerHTML = handlebar_expression;
 
@@ -67,14 +67,14 @@ const names = {
     { firstName: "Carl", lastName: "Lerche" },
     { firstName: "Alan", lastName: "Johnson" }
   ]
-}
+};
 
 Handlebars.registerHelper('list', function(data) {
   const fullNames = [];
 
   for (const name of data) {
     const fullName = `${name['firstName']} ${name['lastName']}`;
-    fullNames.push(fullName); 
+    fullNames.push(fullName);
   }
   console.log(fullNames);
   return fullNames;
@@ -98,3 +98,16 @@ handlebar_expression = expressionTemplate({
   ]
 });
 document.getElementById('people_list').innerHTML = handlebar_expression;
+
+// example of empty context
+expressionHtml = document.getElementById('empty-context').innerHTML;
+expressionTemplate = Handlebars.compile(expressionHtml);
+handlebar_expression = expressionTemplate({
+  author: true,
+  firstName: 'Suraj',
+  lastName: 'Nair'
+});
+document.getElementById('empty-context').innerHTML = handlebar_expression;
+
+
+
