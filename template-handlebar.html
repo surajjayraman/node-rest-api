@@ -59,10 +59,12 @@
         </div>
         <div id="empty-context">
           <ul>
-          <h4> Truthy context example </h4>
+          <h4> Truthy / Empty context example </h4>
           {{author}}
           {{#if author}}
             <h4>{{firstName}} {{lastName}}</h4>
+          {{else}}
+            <h4>Unknown Author</h4>
           {{/if}}
           </ul>
         </div>
