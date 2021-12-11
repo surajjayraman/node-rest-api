@@ -113,5 +113,12 @@ handlebar_expression = expressionTemplate({
 });
 document.getElementById('truthy-context').innerHTML = handlebar_expression;
 
+// example of unless(falsy)
+expressionHtml = document.getElementById('unless-falsy').innerHTML;
+expressionTemplate = Handlebars.compile(expressionHtml);
+handlebar_expression = expressionTemplate({});
+document.getElementById('unless-falsy').innerHTML = handlebar_expression;
+
+
 
 

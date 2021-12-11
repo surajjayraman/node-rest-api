@@ -76,9 +76,16 @@
             {{#each people}}
               <li>{{this}}</li>
             {{/each}}
-          </ul           
-        </div>      
-        
+          </ul>           
+        </div>
+        <div id="unless-falsy">
+          <ul>
+            <h4> Unless (falsy)</h4>
+            {{#unless license}}
+              <h3 class="warning">WARNING: This entry does not have a license!</h3>
+            {{/unless}}
+          </ul>
+        </div>        
       </div>
     </div>
     <script>
