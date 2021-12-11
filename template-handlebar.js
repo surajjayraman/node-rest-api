@@ -102,12 +102,16 @@ document.getElementById('people_list').innerHTML = handlebar_expression;
 // example of empty context
 expressionHtml = document.getElementById('empty-context').innerHTML;
 expressionTemplate = Handlebars.compile(expressionHtml);
+handlebar_expression = expressionTemplate({});
+document.getElementById('empty-context').innerHTML = handlebar_expression;
+
+// example of truthy context
 handlebar_expression = expressionTemplate({
   author: true,
   firstName: 'Suraj',
   lastName: 'Nair'
 });
-document.getElementById('empty-context').innerHTML = handlebar_expression;
+document.getElementById('truthy-context').innerHTML = handlebar_expression;
 
 
 
