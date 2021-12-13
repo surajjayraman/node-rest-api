@@ -119,6 +119,13 @@ expressionTemplate = Handlebars.compile(expressionHtml);
 handlebar_expression = expressionTemplate({license: true});
 document.getElementById('unless-falsy').innerHTML = handlebar_expression;
 
+// example of simple paths
+expressionHtml = document.getElementById('paths').innerHTML;
+expressionTemplate = Handlebars.compile(expressionHtml);
+handlebar_expression = expressionTemplate({name: "Suraj Nair"});
+document.getElementById('paths').innerHTML = handlebar_expression;
+
+
 
 
 
