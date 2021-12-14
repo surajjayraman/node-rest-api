@@ -125,6 +125,18 @@ expressionTemplate = Handlebars.compile(expressionHtml);
 handlebar_expression = expressionTemplate({name: "Suraj Nair"});
 document.getElementById('paths').innerHTML = handlebar_expression;
 
+// example of nested paths
+expressionHtml = document.getElementById('paths-nested').innerHTML;
+expressionTemplate = Handlebars.compile(expressionHtml);
+handlebar_expression = expressionTemplate({
+  title: "My First Blog Post!",
+  author: {
+    id: 47,
+    name: "Yehuda Katz"
+  },
+  body: "My first post. Wheeeee!"
+});
+document.getElementById('paths-nested').innerHTML = handlebar_expression;
 
 
 
