@@ -102,7 +102,18 @@
               {{body}}
             </div>
           </ul> 
-        </div>        
+        </div> 
+        <div id="comments">
+          <ul>
+            <h1>Comments</h1>
+            <h2>{{body}}</h2>            
+            {{#each comments}}              
+              <h2>
+                <a href="/posts/{{../permalink}}#{{id}}">{{title}}</a>
+              </h2>
+            {{/each}}        
+          </ul>  
+        </div>       
       </div>
     </div>
     <script>

@@ -138,6 +138,22 @@ handlebar_expression = expressionTemplate({
 });
 document.getElementById('paths-nested').innerHTML = handlebar_expression;
 
+// example of url paths ../
+expressionHtml = document.getElementById('comments').innerHTML;
+expressionTemplate = Handlebars.compile(expressionHtml);
+handlebar_expression = expressionTemplate({
+  comments: [
+    { id: 1, title: 'wow what a great site'},
+    { id: 2, title: 'i really love handlebars js'}
+  ],
+
+  body: "Try Handlebars JS!",
+  permalink: "try-handlebars-js-today",
+});
+document.getElementById('comments').innerHTML = handlebar_expression;
+
+
+
 
 
 
