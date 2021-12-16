@@ -148,9 +148,18 @@ handlebar_expression = expressionTemplate({
   ],
 
   body: "Try Handlebars JS!",
-  permalink: "try-handlebars-js-today",
+  permalink: "http://tryhandlebarsjs.com/posts/try-handlebars-js-today",
 });
 document.getElementById('comments').innerHTML = handlebar_expression;
+
+// example of numeric key with brackets
+expressionHtml = document.getElementById('numeric-key').innerHTML;
+expressionTemplate = Handlebars.compile(expressionHtml);
+handlebar_expression = expressionTemplate({
+  content: 'how can i access a numeric key?', '10':'with brackets!'
+});
+document.getElementById('numeric-key').innerHTML = handlebar_expression;
+
 
 
 
