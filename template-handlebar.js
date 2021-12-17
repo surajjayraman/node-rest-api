@@ -160,9 +160,19 @@ handlebar_expression = expressionTemplate({
 });
 document.getElementById('numeric-key').innerHTML = handlebar_expression;
 
+// example of helpers
+// using Handlebars Template, Context and Helper functions
+const helperContext = {
+  author: {firstName: "Alan", lastName: "Johnson"},
+  body: "I Love Handlebars",
+  comments: [{
+    author: {firstName: "Yehuda", lastName: "Katz"},
+    body: "Me too!"
+  }]
+};
 
-
-
-
-
+expressionHtml = document.getElementById('helper').innerHTML;
+expressionTemplate = Handlebars.compile(expressionHtml);
+handlebar_expression = expressionTemplate(helperContext);
+document.getElementById('helper').innerHTML = handlebar_expression;
 
