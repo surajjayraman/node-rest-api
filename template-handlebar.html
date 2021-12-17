@@ -122,7 +122,15 @@
         </div>  
         <div id="helper">
           <ul>
-            <h1> By {{author.firstName}} {{author.lastName}}</h1>
+            <h1> By {{fullName author}}</h1>
+            <h2> {{body}}</h2>
+            <h1> Comments</h1>
+            {{#each comments}}
+              <h2>
+                By {{fullName author}}                
+              </h2>
+              {{body}}
+            {{/each}}
           </ul>          
         </div>    
       </div>

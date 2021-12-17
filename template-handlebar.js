@@ -171,6 +171,11 @@ const helperContext = {
   }]
 };
 
+// helper function => returns fullname
+Handlebars.registerHelper('fullName', (data) => {
+  return (`${data.firstName} ${data.lastName}`);
+});
+
 expressionHtml = document.getElementById('helper').innerHTML;
 expressionTemplate = Handlebars.compile(expressionHtml);
 handlebar_expression = expressionTemplate(helperContext);
