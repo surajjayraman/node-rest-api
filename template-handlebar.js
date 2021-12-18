@@ -181,3 +181,22 @@ expressionTemplate = Handlebars.compile(expressionHtml);
 handlebar_expression = expressionTemplate(helperContext);
 document.getElementById('helper').innerHTML = handlebar_expression;
 
+// example of helpers (this context)
+const helperThisContext = {
+  items: [
+    {name: "Handlebars", emotion: "love"},
+    {name: "Mustache", emotion: "enjoy"},
+    {name: "SproutCore", emotion: "want to learn"}
+  ]
+};
+
+// helper function => returns buttonised emotion text using 'this' context
+Handlebars.registerHelper('agree_button', function() {
+  return "<button>I agree. I " + this.emotion + " " + this.name + "</button>";
+});
+
+expressionHtml = document.getElementById('this-helper').innerHTML;
+expressionTemplate = Handlebars.compile(expressionHtml);
+handlebar_expression = expressionTemplate(helperThisContext);
+document.getElementById('this-helper').innerHTML = handlebar_expression;
+
