@@ -9,8 +9,12 @@ document.getElementById('fishman').innerHTML = compiledHtml;
 
 // sample data source
 const data = {
-  company: "Freddy's Fish Farm",
-  phone: '619-555-1212'
+  company: "Suraj's Fish Farm",
+  phone: '619-555-1212',
+  owner: {
+    firstName: 'Suraj',
+    lastName: 'Nair'
+  }
 };
 
 // Use strict mode so that Handlebars will throw exceptions if we
