@@ -14,7 +14,8 @@ const data = {
   owner: {
     firstName: 'Suraj',
     lastName: 'Nair'
-  }
+  },
+  rewardsCustomer: true
 };
 
 // Use strict mode so that Handlebars will throw exceptions if we
