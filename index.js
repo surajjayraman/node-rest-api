@@ -17,6 +17,9 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const { pool } = require('./config');
 
+// rewards context data
+const data = require('./site1.json');
+
 const app = express();
 
 // configure express-handlebars as our view engine
@@ -95,6 +98,12 @@ app
 app.route('/books/:id')
   // DELETE endpoint
   .delete(deleteBook);
+
+// rewards integration
+app.get('/rewards', (req, res) => {
+  res.render('report1', data);
+});
+
 
 // Start server
 app.listen(process.env.PORT || 3002, () => {

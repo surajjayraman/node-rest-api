@@ -1,0 +1,9 @@
+{
+    "company": "Suraj's Fish Farm",
+    "phone": "619-555-1212",
+    "owner": {
+      "firstName": "Suraj",
+      "lastName": "Nair"
+    },
+    "rewardsCustomer": true    
+  }
