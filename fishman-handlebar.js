@@ -15,7 +15,7 @@ const data = {
     firstName: 'Suraj',
     lastName: 'Nair'
   },
-  rewardsCustomer: true
+  rewardsCustomer: false
 };
 
 // Use strict mode so that Handlebars will throw exceptions if we
