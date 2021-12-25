@@ -20,6 +20,9 @@ const { pool } = require('./config');
 // rewards context data
 const data = require('./site1.json');
 
+// tanks context data
+const tankData = require('./site1-tanks.json');
+
 const app = express();
 
 // configure express-handlebars as our view engine
@@ -102,6 +105,11 @@ app.route('/books/:id')
 // rewards integration
 app.get('/rewards', (req, res) => {
   res.render('report1', data);
+});
+
+// tank reports integration
+app.get('/tanks', (req, res) => {
+  res.render('tank-reports1.hbs', tankData);
 });
 
 
