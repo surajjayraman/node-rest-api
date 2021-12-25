@@ -1,0 +1,21 @@
+{
+    "tanks": [
+      {
+        "name": "Tank 1",
+        "waterTemp": {
+          "tag": "tank1.temp",
+          "highLimit": 80,
+          "lowLimit": 76
+        }
+      },
+      {
+        "name": "Tank 2",
+        "waterTemp": {
+          "tag": "tank2.temp",
+          "highLimit": 85,
+          "lowLimit": 70
+        }
+      }
+    ]
+  }
+  
