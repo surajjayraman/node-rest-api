@@ -1,0 +1,16 @@
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Value (degF)</th>
+        <th>Low Limit (degF)</th>
+        <th>High Limit (degF)</th>
+    </tr>
+    {{#each tanks}}
+    <tr>
+        <td>{{name}}</td>
+        <td>{{waterTemp.tag}} value</td>
+        <td>{{waterTemp.lowLimit}}</td>
+        <td>{{waterTemp.highLimit}}</td>
+    </tr>
+    {{/each}}
+</table>
