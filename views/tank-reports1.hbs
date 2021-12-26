@@ -8,9 +8,11 @@
     {{#each tanks}}
     <tr>
         <td>{{name}}</td>
-        <td>{{waterTemp.tag}} value</td>
-        <td>{{waterTemp.lowLimit}}</td>
-        <td>{{waterTemp.highLimit}}</td>
+        {{#with waterTemp}}
+        <td>{{tag}} value</td>
+        <td>{{lowLimit}}</td>
+        <td>{{highLimit}}</td>
+        {{/with}}
     </tr>
     {{/each}}
 </table>

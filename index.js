@@ -109,7 +109,7 @@ app.get('/rewards', (req, res) => {
 
 // tank reports integration
 app.get('/tanks', (req, res) => {
-  res.render('tank-reports1.hbs', tankData);
+  res.render('tank-reports1', tankData);
 });
 
 
