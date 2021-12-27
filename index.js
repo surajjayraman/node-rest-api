@@ -1,4 +1,5 @@
 const express = require('express');
+const handlebars = require('handlebars');
 const exphbs = require('express-handlebars').create(
   { defaultLayout: 'main',
     extname: '.hbs',
@@ -22,6 +23,14 @@ const data = require('./site1.json');
 
 // tanks context data
 const tankData = require('./site1-tanks.json');
+
+// Read in the real-time sensor data
+const sensorData = require('./site1-tanks-sensor-data.json');
+
+// Create a Handlebars helper to get the sensor value from JSON file
+handlebars.registerHelper('getSensorValue', function(tag) {
+  return sensorData[tag];
+});
 
 const app = express();
 
