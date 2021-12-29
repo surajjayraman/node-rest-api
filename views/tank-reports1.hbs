@@ -5,14 +5,13 @@
         <th>Low Limit (degF)</th>
         <th>High Limit (degF)</th>
     </tr>
+    
     {{#each tanks}}
     <tr>
-        <td>{{name}}</td>
-        {{#with waterTemp}}
-        <td>{{getSensorValue tag}}</td>
-        <td>{{lowLimit}}</td>
-        <td>{{highLimit}}</td>
-        {{/with}}
+        <td>{{name}}</td>    
+        <td>{{getSensorValueStyled waterTemp}}</td>                 
+        <td>{{waterTemp.lowLimit}}</td>
+        <td>{{waterTemp.highLimit}}</td>        
     </tr>
-    {{/each}}
+   {{/each}}
 </table>

@@ -32,6 +32,23 @@ handlebars.registerHelper('getSensorValue', function(tag) {
   return sensorData[tag];
 });
 
+// Create helper to render output differently if fish tank
+// temperatures are either above a high limit or below a low limit
+handlebars.registerHelper('getSensorValueStyled', (waterTemp)=> {
+  const value = sensorData[waterTemp.tag] ? sensorData[waterTemp.tag] : "value not found";
+  console.log(value);
+  let cssClass;
+  if (value <= waterTemp.lowLimit) {
+    cssClass = 'lowAlarm';
+  } else if (value >= waterTemp.highLimit) {
+    cssClass = 'highAlarm';
+  } 
+  console.log(cssClass);
+  let result = cssClass ? `<span class="${cssClass}">${value}</span>` : value;
+  console.log(result);
+  return new handlebars.SafeString(result);
+});
+
 const app = express();
 
 // configure express-handlebars as our view engine
