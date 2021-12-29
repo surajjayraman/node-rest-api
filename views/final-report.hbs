@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{company}} Aquaponics Report</title>
+    <style>
+        body {
+            font: normal 14px Arial, sans-serif;
+        }
+        table {
+           border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+            text-align: center;
+        }
+        span.lowAlarm {
+        background-color: yellow;
+        }
+        span.highAlarm {
+        background-color: tomato;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Value<br>(degF)</th>
+            <th>Low Limit<br>(degF)</th>
+            <th>High Limit<br>(degF)</th>
+        </tr>
+        {{#each tanks}}
+        <tr>
+            <td>{{name}}</td>
+            <td>{{getSensorValueStyled waterTemp}}</td>
+            <td>{{waterTemp.lowLimit}}</td>
+            <td>{{waterTemp.highLimit}}</td>
+        </tr>
+        {{/each}}
+    </table>
+</body>
+</html>
