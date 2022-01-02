@@ -1,3 +1,4 @@
+const fetch = require('node-fetch');
 const express = require('express');
 const handlebars = require('handlebars');
 const exphbs = require('express-handlebars').create(
@@ -42,7 +43,7 @@ handlebars.registerHelper('getSensorValueStyled', (waterTemp)=> {
     cssClass = 'lowAlarm';
   } else if (value >= waterTemp.highLimit) {
     cssClass = 'highAlarm';
-  } 
+  }
   console.log(cssClass);
   let result = cssClass ? `<span class="${cssClass}">${value}</span>` : value;
   console.log(result);
@@ -138,6 +139,10 @@ app.get('/tanks', (req, res) => {
   res.render('final-report', tankData);
 });
 
+// loyalty wallet integration
+app.get('/wallet', (req, res) => {
+  res.status(200).json("Welcome to your points Loyalty Wallet");
+});
 
 // Start server
 app.listen(process.env.PORT || 3002, () => {
