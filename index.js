@@ -144,6 +144,17 @@ app.get('/wallet', (req, res) => {
   res.status(200).json("Welcome to your points Loyalty Wallet");
 });
 
+// making http requests with node-fetch
+// retrieve user data from REST API
+app.get('/users', (req, res) => {
+  
+  fetch('https://jsonplaceholder.typicode.com/users')
+    .then(response => response.json())
+    .then(json => res.status(200).json(json[0]));    
+
+});
+
+
 // Start server
 app.listen(process.env.PORT || 3002, () => {
   console.log(`Server listening`);
