@@ -150,8 +150,29 @@ app.get('/users', (req, res) => {
   
   fetch('https://jsonplaceholder.typicode.com/users')
     .then(response => response.json())
-    .then(json => res.status(200).json(json[0]));    
+    .then(json => res.status(200).json(json[0]))
+    .catch(err => console.log(err));
 
+});
+
+// add a new item to JSONPlaceholder's todos list
+// for the user whose id equals 123
+app.get('/addtodos', (req, res) => {
+  const todo = {
+    userId: 123,
+    title: "loren impsum doloris",
+    completed: false
+  };
+
+  fetch('https://jsonplaceholder.typicode.com/todos', {
+    method: 'POST',
+    body: JSON.stringify(todo),
+    headers: { 'Content-Type': 'application/json' }
+  }).then(res => res.json())
+    .then(json => {
+      console.log(json);
+      res.status(200).json(json);
+    });
 });
 
 
