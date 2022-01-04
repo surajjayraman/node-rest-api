@@ -175,6 +175,27 @@ app.get('/addtodos', (req, res) => {
     });
 });
 
+// Handling Exceptions and Errors
+// use the ok field of Response objects
+// which equals true if the status code is 2xx
+function checkResponseStatus(res) {
+  if(res.ok){
+      return res
+  } else {
+      throw new Error(`The HTTP status of the reponse: ${res.status} (${res.statusText})`);
+  }
+}
+
+app.get('/error', (req, res) => {
+
+  fetch('https://jsonplaceholder.typicode.com/MissingResource')
+    .then(checkResponseStatus)
+    .then(res => res.json())
+    .then(json => console.log(json))
+    .catch(err => console.log(err));
+
+});
+
 
 // Start server
 app.listen(process.env.PORT || 3002, () => {
